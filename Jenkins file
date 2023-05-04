@@ -1,15 +1,17 @@
 pipeline {
     agent any
-    
+
     stages {
         stage('pull code') {
             steps {
-                git credentialsId: 'user', url: 'https://github.com/saurabh-786-user/aws-sample-cicd-cdk-1.git'
+               git credentialsId: 'user', url: 'https://github.com/saurabh-786-user/aws-sample-cicd-cdk-1.git'
             }
+        } 
+        
         stage('image create and deploy') {
-            steps {
-                sh 'docker build -t php:v1 .'
-                sh 'docker-compose up'
+           steps {
+              sh 'docker build -t php:v1 .'
+              sh 'docker-compose up'
             }    
         }
     }
