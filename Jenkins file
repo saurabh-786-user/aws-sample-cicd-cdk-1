@@ -9,7 +9,7 @@ pipeline {
             }
         stage (Image create and Deploy) {
             steps {
-                sh 'docker build -t apache:v1 .'
+                sh 'docker build -t php:v1 .'
                 sh 'docker-compose up'
             }    
         }
