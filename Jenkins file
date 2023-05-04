@@ -6,8 +6,13 @@ pipeline {
     stages {
         stage('pull code') {
             steps {
-                sh 'node --version'
+                git credentialsId: 'user', url: 'https://github.com/saurabh-786-user/aws-sample-cicd-cdk-1.git'
             }
+        stage {
+            steps {
+                sh 'docker build -t apache:v1 .'
+                sh 'docker-compose up'
+            }    
         }
     }
 }
