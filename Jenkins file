@@ -7,7 +7,7 @@ pipeline {
             steps {
                 git credentialsId: 'user', url: 'https://github.com/saurabh-786-user/aws-sample-cicd-cdk-1.git'
             }
-        stage (Image create and Deploy) {
+        stage(Image create and Deploy) {
             steps {
                 sh 'docker build -t php:v1 .'
                 sh 'docker-compose up'
