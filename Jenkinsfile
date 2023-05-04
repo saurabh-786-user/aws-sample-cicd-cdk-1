@@ -14,8 +14,8 @@ pipeline {
 
         stage('deploy') {
             steps {
-               sh 'docker build -t php:v1 .'
-               sh 'docker-compose up'
+                sh 'docker build -t php:v1 .'
+                sh 'docker-compose up'
             }    
         }
     }
